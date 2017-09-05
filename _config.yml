@@ -1,51 +1,39 @@
-# Site Info
-title:              "The Plain"
-description:        "The Plain is a minimalist Jekyll theme, that's it. Can't say anymore..."
-google_verify:      Empty # Put your Google Verification here
-google_analytics:   Empty # Put your Google Analytics code
+# Site settings
+title: Monochrome | A minimal, responsive Jekyll blog theme
+description: "A minimal, responsive, ready to use blog template, built with Jekyll."
+url: "http://www.dyutibarma.github.io/monochrome"
+author:
+  name: "The Review Index"
+  email: "dyutibarma@gmail.com"
+  url: "https://thereviewindex.com"
 
-# Author Info
-author_name:        "Keuntae Shin" # Your name here
-author_email:       keuntae.shin at gmail.com # Your email here
-author_gravatar:    xxx # Your Gravatar md5 hash here for logo
-twitter_username:   Empty # Your Twitter username here
-github_username:    keuntaeshin # Your GitHub username here
+# Build settings
+baseurl: /monochrome # Change this to your relative path (ex: /blog/), or leave just a /
+markdown: kramdown
+source: .
+destination: ./_site
+permalink: /:title
+paginate: 8
+paginate_path: /page:num/
 
-# Site Settings
-baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
-permalink:          /notes/:title # Post permalink
-timezone:           Asia/Kuala_Lumpur # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-mathjax:            true  # enables support for mathjax - set to false to disable
-
-# Site Build
-highlighter:        rouge
-markdown:           kramdown
-kramdown:
-    input:          GFM
-sass:
-    style:          :compressed
-
-# Other Params
-include:            [ "robots.txt" ]
-exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile" ]
-gems:
-  - jekyll-sitemap
-
-
-
+# Default values
 defaults:
   -
     scope:
-      path:         ""
+      path: ""
+      type: "posts"
     values:
-      layout:       "null"
-  -
-    scope:
-      type:         "pages"
-    values:
-      layout:       "page"
-  -
-    scope:
-      type:         "posts"
-    values:
-      layout:       "post"
+      layout: "post"
+
+# Plugins
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+# Custom variables
+version: "1.0.0"
+
+# Options
+custom_header: false
+custom_nav_footer: false
+reverse: false

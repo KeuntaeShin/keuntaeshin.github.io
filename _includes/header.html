@@ -1,16 +1,26 @@
-<aside class="logo">
+<header id="header" class="parent justify-spaceBetween">
+  <div class="inner w100 relative">
+    <span class="f-left">  
+      <a href="{{ site.baseurl }}/">
+        <h1>
+          <span>mono</span>chrome
+        </h1>
+      </a>
+    </span>
+    <span id="nav-links" class="absolute right bottom">
+      <!-- Nav pages -->
+	    {% for page in site.pages %}
+	      {% if page.layout == "page" %}
+	        <a href="{% if site.baseurl == "/" %}{{ page.url }}{% else %}{{ page.url | prepend: site.baseurl }}{% endif %}" title="{{ page.title }}">{{ page.title }}</a>
+	      {% endif %}
+	    {% endfor %}
+      
+      <!-- Nav links -->
+	    {% include link.html %}
 
-	{% if page.url == '/index.html' or page.url == '/' %}
-		{% assign link = '/about' %}
-		{% assign prompt = 'About the Author' %}
-	{% else %}
-		{% assign link = '/' %}
-		{% assign prompt = 'Back to Home' %}
-	{% endif %}
+    </span>
+  </div>
+</header>
 
-	<a href="{{ link | prepend: site.baseurl }}">
-		<img src="http://www.gravatar.com/avatar/{{ site.author_gravatar }}.png?s=80" class="gravatar">
-	</a>
-	<span class="logo-prompt">{{ prompt }}</span>
 
-</aside>
+

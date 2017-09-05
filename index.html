@@ -1,31 +1,17 @@
 ---
 layout: default
 ---
+<!-- Posts -->
+<ul id="posts">
 
-<section>
+	{% for post in paginator.posts %}
 
-	{% for post in site.posts %}
-		{% unless post.next %}
-			<h3>{{ post.date | date: '%Y' }} &#172;</h3>
-		{% else %}
-			{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-			{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-			{% if year != nyear %}
-				<h3>{{ post.date | date: '%Y' }} &#172;</h3>
-			{% endif %}
-		{% endunless %}
+	  <li class="post">
+	  	<h2><a href="{% if site.baseurl == "/" %}{{ post.url }}{% else %}{{ post.url | prepend: site.baseurl }}{% endif %}">{%if post.header %}{{ post.header }}{% else %}{{ post.title }}{% endif %}</a></h2>
+      <time datetime="{{ post.date | date_to_xmlschema }}" class="by-line"> <i>{{ post.date | date_to_string }}</i> </time>
+	  	<p>{{ post.content | strip_html | truncatewords:50 }}</p>
+	  </li>
 
-		<ul>
-			<li>
-				<div class="post-date">
-					<span>{{ post.date | date: "%b %d" }}</span>
-				</div>
-				<div class="title">
-					<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-				</div>
-			</li>
-		</ul>
+    {% endfor %}
 
-	{% endfor %}
-
-</section>
+</ul>
