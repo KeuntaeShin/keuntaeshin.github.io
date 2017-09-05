@@ -1,11 +1,11 @@
 # Site settings
 title: Monochrome | A minimal, responsive Jekyll blog theme
 description: "A minimal, responsive, ready to use blog template, built with Jekyll."
-url: "http://www.dyutibarma.github.io/monochrome"
+url: "https://github.com/KeuntaeShin/keuntaeshin.github.io"
 author:
-  name: "The Review Index"
-  email: "dyutibarma@gmail.com"
-  url: "https://thereviewindex.com"
+  name: "T"
+  email: "T at T"
+  url: "T"
 
 # Build settings
 baseurl: /monochrome # Change this to your relative path (ex: /blog/), or leave just a /
